@@ -5,7 +5,7 @@ from .utils import code_generator, createshorturl
 class KirrUrlManager(models.Manager):
     def all(self, *args, **kwargs):
         qs_main = super(KirrUrlManager,self).all(*args,**kwargs)
-        qs = qs_main.filter(active=True)
+        qs = qs_main.filter(Active=False)
         return qs
 
     def refresh_url(self):
